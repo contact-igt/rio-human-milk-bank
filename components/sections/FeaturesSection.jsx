@@ -1,10 +1,10 @@
 "use client";
 
-import { HMB } from "../constants";
+import { HMB, LINKS } from "../constants";
 import { Eyebrow, FIcon, Reveal } from "../shared/Helpers";
 import styles from "../styles.module.css";
 
-export function FeaturesSection({ setDonorOpen, setRecipientOpen, setReferralOpen }) {
+export function FeaturesSection() {
   const s = HMB;
   return (
     <section className="section tint-blue">
@@ -30,10 +30,28 @@ export function FeaturesSection({ setDonorOpen, setRecipientOpen, setReferralOpe
               <h4 style={{ margin: 0, fontSize: "17px", fontWeight: "700", color: "var(--ink)" }}>Looking for donor milk, donating, or referring a patient?</h4>
               <p style={{ margin: "4px 0 0", fontSize: "13.5px", color: "var(--muted)" }}>Our 24/7 human milk bank team is ready to guide you at every step.</p>
             </div>
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-              <button className="btn btn-pink btn-sm" onClick={() => setDonorOpen(true)}>❤️ Become a Donor</button>
-              <button className="btn btn-cta btn-sm" onClick={() => setRecipientOpen(true)}>🍼 Request Milk</button>
-              <button className={`btn ${styles.mbarRefer} btn-sm`} onClick={() => setReferralOpen(true)}>🏥 Refer Patient</button>
+            <div>
+              <a
+                href={LINKS.call}
+                className="btn btn-pink btn-sm"
+                style={{
+                  padding: "12px 22px",
+                  fontSize: "14px",
+                  fontWeight: "700",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  boxShadow: "0 10px 24px -8px rgba(253, 112, 161, 0.6)",
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ flexShrink: 0 }}>
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", lineHeight: "1.2" }}>
+                  <span style={{ fontSize: "10.5px", fontWeight: "800", textTransform: "uppercase", letterSpacing: "0.06em", opacity: 0.9 }}>Call Helpline</span>
+                  <span style={{ fontSize: "14px", fontWeight: "800", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>+91 77083 18222</span>
+                </div>
+              </a>
             </div>
           </div>
         </Reveal>

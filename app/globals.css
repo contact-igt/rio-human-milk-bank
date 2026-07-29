@@ -271,6 +271,66 @@ html, body {
 }
 .rio .btn-line:hover { background: var(--blue-soft); }
 
+/* ── Hero & Section Call Button ── */
+.rio .hero-call-wrap {
+  margin-top: 28px;
+  display: flex;
+}
+
+.rio .hero-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 14px 30px -10px rgba(253, 112, 161, 0.6);
+}
+
+.rio .hero-call-ic {
+  flex-shrink: 0;
+}
+
+.rio .hero-call-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.rio .hero-call-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+}
+
+.rio .hero-call-num {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .rio .hero-call-wrap {
+    width: 100%;
+    margin-top: 22px;
+  }
+  .rio .hero-call-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
+  }
+  .rio .hero-call-text {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 /* ── Mobile sticky bottom bar ── */
 .rio .mbar {
   display: none;
@@ -346,12 +406,59 @@ html, body {
 }
 
 /* ── Responsive breakpoints ── */
-@media (max-width: 900px) {
+@media (max-width: 879px) {
   .rio .nav { display: none; }
   .rio .hamburger { display: none; }
-  .rio .nav-cta .btn-line { display: none; }
-  .rio .mbar { display: flex; bottom: 54px; z-index: 99; }
-  .rio .footer { margin-bottom: 110px; }
+  .rio .footer { margin-bottom: 70px; }
+}
+
+@media (max-width: 600px) {
+  .rio .topstrip {
+    font-size: 11.5px;
+    padding: 7px 10px;
+    line-height: 1.35;
+  }
+  .rio .header {
+    padding: 10px 14px;
+  }
+  .rio .logo {
+    margin-left: 0;
+  }
+  .rio .logo-img {
+    height: 42px;
+  }
+  .rio .nav-cta {
+    gap: 0;
+  }
+  .rio .header .btn-line {
+    display: inline-flex !important;
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+  .rio .header-dropdown-wrap {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .rio .wrap {
+    padding: 0 16px;
+  }
+  .qa-ic {
+    width: 28px;
+    height: 28px;
+  }
+  .qa-ic svg {
+    width: 15px;
+    height: 15px;
+  }
+  .qa-label {
+    font-size: 9.5px;
+    letter-spacing: -0.2px;
+  }
+  .qa-btn {
+    padding: 6px 1px 8px;
+  }
 }
 
 /* ── Bottom Dock Mobile / Floating Desktop Bar (Quick Actions) ── */
@@ -369,6 +476,9 @@ html, body {
   box-shadow: 0 -8px 24px rgba(23, 30, 82, 0.08);
 }
 .qa-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
   --qa-color: var(--blue, #303573);
   --qa-chip-bg: var(--blue-soft, #EDEFF8);
   --qa-hover-bg: var(--blue-soft, #EDEFF8);
@@ -379,6 +489,7 @@ html, body {
   padding: 8px 0 10px;
   text-decoration: none;
   color: var(--qa-color);
+  font-family: inherit;
   transition: color 0.2s, background-color 0.2s, transform 0.2s;
 }
 .qa-btn:visited {
@@ -411,10 +522,25 @@ html, body {
   --qa-chip-bg: var(--pink-soft, #FFEAF2);
   --qa-hover-bg: #fff5f9;
 }
-.qa-maps {
+.qa-donor {
+  --qa-color: var(--pink-deep, #E84E86);
+  --qa-chip-bg: var(--pink-soft, #FFEAF2);
+  --qa-hover-bg: #fff5f9;
+}
+.qa-request {
+  --qa-color: var(--brown-deep, #A06E3C);
+  --qa-chip-bg: #FAF0E6;
+  --qa-hover-bg: #F5E6D8;
+}
+.qa-referral {
   --qa-color: var(--blue, #303573);
   --qa-chip-bg: var(--blue-soft, #EDEFF8);
   --qa-hover-bg: #f7f8ff;
+}
+.qa-wa {
+  --qa-color: #128C7E;
+  --qa-chip-bg: #E8F9EE;
+  --qa-hover-bg: #D4F4DF;
 }
 .qa-book {
   --qa-color: var(--green-deep, #5E7F2C);
