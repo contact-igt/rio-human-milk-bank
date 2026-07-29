@@ -1235,9 +1235,10 @@
 
 .actionTitleRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 4px 8px;
 }
 
 .actionTitle {
@@ -2042,5 +2043,30 @@
 
   .actionButtonsRow {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroActionCard {
+    padding: 16px 12px;
+    border-radius: 20px;
+  }
+  .actionItemCard {
+    padding: 10px 10px;
+    gap: 8px;
+  }
+  .actionIconWrap {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .actionTitle {
+    font-size: 13.5px;
+    line-height: 1.25;
+  }
+  .actionSub {
+    font-size: 11px;
+    line-height: 1.3;
   }
 }

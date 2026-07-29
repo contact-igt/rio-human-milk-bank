@@ -100,18 +100,12 @@ export default function HumanMilkBankPage() {
         />
       </main>
 
-      {/* ── Footer ── */}
-      <SiteFooter />
-
-      {/* ── Mobile Sticky Action Bar ── */}
-      <div className="mbar">
-        <button className={`btn btn-pink ${styles.mbarBtn}`} onClick={() => setDonorOpen(true)}>❤️ Donate</button>
-        <button className={`btn btn-cta ${styles.mbarBtn}`} onClick={() => setRecipientOpen(true)}>🍼 Request</button>
-        <button className={`btn ${styles.mbarRefer} ${styles.mbarBtn}`} onClick={() => setReferralOpen(true)}>🏥 Refer</button>
-      </div>
-
       {/* ── Quick Actions (Floating Desktop / Sticky Mobile Dock) ── */}
-      <QuickActions />
+      <QuickActions
+        setDonorOpen={setDonorOpen}
+        setRecipientOpen={setRecipientOpen}
+        setReferralOpen={setReferralOpen}
+      />
 
       {/* ── Modals ── */}
       <DonorModal open={donorOpen} onClose={() => setDonorOpen(false)} />
