@@ -1130,7 +1130,7 @@
   font-family: 'Proxima Nova', 'Mulish', 'Montserrat', sans-serif;
   font-size: clamp(19px, 2.2vw, 22px);
   font-weight: 800;
-  color: var(--ink);
+  color: var(--ink, #1A1A22) !important;
   margin-top: 4px;
   line-height: 1.2;
 }
