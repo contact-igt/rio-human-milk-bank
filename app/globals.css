@@ -280,8 +280,8 @@ html, body {
 .rio .hero-call-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 13px 26px;
+  gap: 10px;
+  padding: 14px 26px;
   font-size: 15px;
   font-weight: 700;
   box-shadow: 0 14px 30px -10px rgba(253, 112, 161, 0.6);
@@ -293,18 +293,23 @@ html, body {
 
 .rio .hero-call-text {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  line-height: 1.25;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .rio .hero-call-label {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.9;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+.rio .hero-call-label::after {
+  content: ":";
 }
 
 .rio .hero-call-num {
@@ -326,8 +331,21 @@ html, body {
     box-sizing: border-box;
   }
   .rio .hero-call-text {
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 2px;
+    line-height: 1.25;
+  }
+  .rio .hero-call-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.9;
+  }
+  .rio .hero-call-label::after {
+    content: "";
   }
 }
 
@@ -462,7 +480,11 @@ html, body {
 }
 
 /* ── Bottom Dock Mobile / Floating Desktop Bar (Quick Actions) ── */
-.qa {
+.qa-desktop {
+  display: none;
+}
+
+.qa-mobile {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -475,6 +497,7 @@ html, body {
   border-top: 1px solid var(--line, #e2e8f0);
   box-shadow: 0 -8px 24px rgba(23, 30, 82, 0.08);
 }
+
 .qa-btn {
   background: transparent;
   border: none;
@@ -522,6 +545,11 @@ html, body {
   --qa-chip-bg: var(--pink-soft, #FFEAF2);
   --qa-hover-bg: #fff5f9;
 }
+.qa-maps {
+  --qa-color: var(--blue, #303573);
+  --qa-chip-bg: var(--blue-soft, #EDEFF8);
+  --qa-hover-bg: #f7f8ff;
+}
 .qa-donor {
   --qa-color: var(--pink-deep, #E84E86);
   --qa-chip-bg: var(--pink-soft, #FFEAF2);
@@ -542,30 +570,21 @@ html, body {
   --qa-chip-bg: #E8F9EE;
   --qa-hover-bg: #D4F4DF;
 }
-.qa-book {
-  --qa-color: var(--green-deep, #5E7F2C);
-  --qa-chip-bg: var(--green-soft, #EFF5E3);
-  --qa-hover-bg: #f7fbef;
-}
-.qa-ig {
-  --qa-color: var(--pink-deep, #E84E86);
-  --qa-chip-bg: var(--pink-soft, #FFEAF2);
-  --qa-hover-bg: #fff5f9;
-}
-.qa-yt {
-  --qa-color: #D93030;
-  --qa-chip-bg: #FFE8E8;
-  --qa-hover-bg: #FFF4F4;
-}
 
 @media (min-width: 880px) {
-  .qa {
+  .qa-mobile {
+    display: none !important;
+  }
+  .qa-desktop {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
     top: 50%;
     bottom: auto;
     left: auto;
     right: 24px;
     transform: translateY(-50%);
-    grid-template-columns: 1fr;
+    z-index: 100;
     gap: 10px;
     background: none;
     backdrop-filter: none;
@@ -573,7 +592,7 @@ html, body {
     box-shadow: none;
     width: auto;
   }
-  .qa-btn {
+  .qa-desktop .qa-btn {
     width: 58px;
     height: 58px;
     padding: 0;
@@ -583,23 +602,23 @@ html, body {
     border: 1px solid color-mix(in srgb, var(--qa-color) 20%, #ffffff);
     transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
   }
-  .qa-btn:hover {
+  .qa-desktop .qa-btn:hover {
     transform: scale(1.08);
     background-color: var(--qa-color);
     color: #ffffff;
     box-shadow: 0 14px 28px rgba(23, 30, 82, 0.18);
   }
-  .qa-ic {
+  .qa-desktop .qa-ic {
     width: 30px;
     height: 30px;
     margin-bottom: 0;
     background: transparent;
   }
-  .qa-ic svg {
+  .qa-desktop .qa-ic svg {
     width: 23px;
     height: 23px;
   }
-  .qa-label {
+  .qa-desktop .qa-label {
     display: none;
   }
 }

@@ -10,6 +10,14 @@ function PhoneIc() {
   );
 }
 
+function PinIc() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    </svg>
+  );
+}
+
 function HeartIc() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -43,43 +51,47 @@ function WhatsAppIc() {
 }
 
 export function QuickActions({ setDonorOpen, setRecipientOpen, setReferralOpen }) {
-  const acts = [
-    { label: "Call", href: LINKS.phone, ic: <PhoneIc />, cls: "qa-call" },
-    { label: "Donate", onClick: () => setDonorOpen?.(true), ic: <HeartIc />, cls: "qa-donor" },
-    { label: "Request", onClick: () => setRecipientOpen?.(true), ic: <MilkBottleIc />, cls: "qa-request" },
-    { label: "Referral", onClick: () => setReferralOpen?.(true), ic: <HospitalIc />, cls: "qa-referral" },
-    { label: "WhatsApp", href: LINKS.whatsapp, ic: <WhatsAppIc />, cls: "qa-wa" },
-  ];
-
   return (
-    <nav className="qa" aria-label="Quick actions">
-      {acts.map((a) => {
-        if (a.href) {
-          return (
-            <a
-              key={a.label}
-              className={`qa-btn ${a.cls}`}
-              href={a.href}
-              target={a.href.startsWith("http") ? "_blank" : undefined}
-              rel={a.href.startsWith("http") ? "noreferrer" : undefined}
-            >
-              <span className="qa-ic">{a.ic}</span>
-              <span className="qa-label">{a.label}</span>
-            </a>
-          );
-        }
-        return (
-          <button
-            key={a.label}
-            type="button"
-            className={`qa-btn ${a.cls}`}
-            onClick={a.onClick}
-          >
-            <span className="qa-ic">{a.ic}</span>
-            <span className="qa-label">{a.label}</span>
-          </button>
-        );
-      })}
-    </nav>
+    <>
+      {/* ── Desktop Floating Quick Actions (Call, Location, WhatsApp) ── */}
+      <nav className="qa qa-desktop" aria-label="Desktop quick actions">
+        <a className="qa-btn qa-call" href={LINKS.phone} aria-label="Call">
+          <span className="qa-ic"><PhoneIc /></span>
+          <span className="qa-label">Call</span>
+        </a>
+        <a className="qa-btn qa-maps" href={LINKS.maps} target="_blank" rel="noreferrer" aria-label="Location">
+          <span className="qa-ic"><PinIc /></span>
+          <span className="qa-label">Location</span>
+        </a>
+        <a className="qa-btn qa-wa" href={LINKS.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <span className="qa-ic"><WhatsAppIc /></span>
+          <span className="qa-label">WhatsApp</span>
+        </a>
+      </nav>
+
+      {/* ── Mobile Bottom Dock Quick Actions (Call, Donate, Request, Referral, WhatsApp) ── */}
+      <nav className="qa qa-mobile" aria-label="Mobile quick actions">
+        <a className="qa-btn qa-call" href={LINKS.phone}>
+          <span className="qa-ic"><PhoneIc /></span>
+          <span className="qa-label">Call</span>
+        </a>
+        <button type="button" className="qa-btn qa-donor" onClick={() => setDonorOpen?.(true)}>
+          <span className="qa-ic"><HeartIc /></span>
+          <span className="qa-label">Donate</span>
+        </button>
+        <button type="button" className="qa-btn qa-request" onClick={() => setRecipientOpen?.(true)}>
+          <span className="qa-ic"><MilkBottleIc /></span>
+          <span className="qa-label">Request</span>
+        </button>
+        <button type="button" className="qa-btn qa-referral" onClick={() => setReferralOpen?.(true)}>
+          <span className="qa-ic"><HospitalIc /></span>
+          <span className="qa-label">Referral</span>
+        </button>
+        <a className="qa-btn qa-wa" href={LINKS.whatsapp} target="_blank" rel="noreferrer">
+          <span className="qa-ic"><WhatsAppIc /></span>
+          <span className="qa-label">WhatsApp</span>
+        </a>
+      </nav>
+    </>
   );
 }
