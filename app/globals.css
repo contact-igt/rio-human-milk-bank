@@ -1,0 +1,570 @@
+/* ═══════════════════════════════════════════════════════════════════
+   RIO BRAND — Global Design System
+   Fonts: 'Proxima Nova' / 'Mulish' (headings) · 'Montserrat' (body)
+   ═══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  scroll-behavior: smooth;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Root brand tokens ── */
+.rio {
+  --blue:       #303573;
+  --blue-deep:  #23275A;
+  --blue-soft:  #EDEFF8;
+  --pink:       #FD70A1;
+  --pink-deep:  #E84E86;
+  --pink-soft:  #FFEAF2;
+  --green:      #7BA93A;
+  --green-deep: #5E7F2C;
+  --green-soft: #EFF5E3;
+  --brown:      #BD844C;
+  --brown-deep: #A06E3C;
+  --coral:      #FD70A1;
+  --coral-deep: #E84E86;
+  --ink:        #1A1A22;
+  --muted:      #5B5F70;
+  --cream:      #FFFFFF;
+  --line:       #ECE7DD;
+  --radius:     22px;
+  --shadow:     0 30px 60px -34px rgba(48, 53, 115, .32);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.rio * { box-sizing: border-box; }
+
+/* ── Typography ── */
+.rio h1, .rio h2 {
+  font-family: 'Proxima Nova', 'Mulish', 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin: 0;
+  color: var(--ink);
+}
+.rio h3, .rio h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.rio p  { margin: 0; color: var(--muted); }
+.rio a  { text-decoration: none; color: inherit; }
+.rio ul { margin: 0; padding: 0; list-style: none; }
+.rio img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── Layout helpers ── */
+.rio .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+.rio .section { position: relative; overflow: hidden; }
+.rio .sec-head { max-width: 660px; margin-bottom: 46px; }
+.rio .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.rio .sec-head h2 { font-size: clamp(28px, 4vw, 42px); margin-top: 20px; }
+.rio .sec-note { margin-top: 14px; font-size: 16.5px; color: var(--muted); }
+
+/* ── Tint backgrounds ── */
+.rio .tint-blue  { background: var(--blue-soft); }
+.rio .tint-pink  { background: var(--pink-soft); }
+.rio .tint-green { background: var(--green-soft); }
+
+/* ── Reveal animation ── */
+.rio .reveal {
+  opacity: 1; transform: none;
+  transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.rio .reveal.in { opacity: 1; transform: none; }
+
+/* ── Image wrap ── */
+.rio .img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.rio .img-wrap::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.28), transparent 36%);
+  opacity: 0; transform: scale(.92);
+  transition: opacity 360ms ease, transform 520ms cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+.rio .img-wrap:hover::after { opacity: 1; transform: scale(1.04); }
+.rio .fb {
+  width: 34px; height: 34px;
+  position: absolute; inset: 0; margin: auto;
+  fill: rgba(255,255,255,.85);
+}
+
+/* ── Gradient placeholders ── */
+.rio .g0 { background: linear-gradient(135deg, #C9CEF2, #FFD7E6); }
+.rio .g1 { background: linear-gradient(135deg, #FFD7E6, #DCEBC4); }
+.rio .g2 { background: linear-gradient(135deg, #DCEBC4, #C9CEF2); }
+
+/* ── Eyebrow label ── */
+.rio .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12.5px; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--pink-deep);
+}
+.rio .ey-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--pink);
+  animation: rio-dot-pulse 2.4s ease-in-out infinite;
+}
+.rio .eyebrow.light { color: #FFC4DA; }
+.rio .eyebrow.light .ey-dot { background: #FFC4DA; }
+
+/* ── Top strip ── */
+.rio .topstrip {
+  background: var(--blue-deep);
+  color: #EAEAF4;
+  font-size: 13px;
+  padding: 9px 0;
+  text-align: center;
+}
+.rio .topstrip a { color: #FFC4DA; font-weight: 700; }
+
+/* ── Sticky header ── */
+.rio .header {
+  position: sticky; top: 0; z-index: 80;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px max(28px, calc((100% - 1200px) / 2 + 28px));
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  transition: background .3s, box-shadow .3s;
+}
+.rio .header.solid { box-shadow: 0 1px 0 var(--line); }
+
+/* ── Logo ── */
+.rio .logo {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0; margin-left: -12px;
+}
+.rio .logo-img { height: 58px; width: auto; display: block; object-fit: contain; }
+.rio .logo-word {
+  display: flex; align-items: baseline; gap: 6px;
+  font-family: 'Proxima Nova', 'Mulish', sans-serif;
+  font-weight: 800; font-size: 26px; color: var(--ink); line-height: 1;
+}
+.rio .logo-word em {
+  font-style: normal; font-weight: 700; font-size: 12px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--green);
+}
+.rio .logo-word.on-dark { color: #fff; }
+
+/* ── Desktop nav ── */
+.rio .nav {
+  display: flex; align-items: center; gap: 22px;
+  font-size: 14.5px; font-weight: 600; line-height: 1;
+  min-width: 0; white-space: nowrap;
+}
+.rio .nav a { color: var(--muted); transition: color .2s; line-height: 1; }
+.rio .nav a:hover, .rio .nav a.active { color: var(--blue); }
+.rio .nav-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+/* ── Dropdown ── */
+.rio .nav-dd { position: relative; display: inline-flex; align-items: center; }
+.rio .nav-dd-trigger {
+  display: inline-flex; align-items: center; gap: 5px;
+  cursor: pointer; color: var(--muted); font-weight: 600; line-height: 1;
+}
+.rio .nav-dd:hover .nav-dd-trigger,
+.rio .nav-dd-trigger.active { color: var(--blue); }
+.rio .nav-dd .cv { font-size: 10px; transition: transform .2s; }
+.rio .nav-dd:hover .cv { transform: rotate(180deg); }
+.rio .nav-dd-menu {
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  margin-top: 12px; background: #fff;
+  border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: var(--shadow); padding: 10px;
+  min-width: 280px; opacity: 0; visibility: hidden;
+  transition: opacity .2s, transform .2s; z-index: 70;
+}
+.rio .nav-dd-menu::before {
+  content: "";
+  position: absolute; top: -12px; left: 0; right: 0; height: 12px;
+}
+.rio .nav-dd:hover .nav-dd-menu {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.rio .nav-dd-menu a {
+  display: block; padding: 10px 13px; border-radius: 10px;
+  font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.rio .nav-dd-menu a:hover { background: var(--blue-soft); color: var(--blue); }
+.rio .nav-dd-all {
+  margin-top: 6px; border-top: 1px solid var(--line);
+  padding-top: 12px !important;
+  color: var(--pink-deep) !important; font-weight: 700;
+}
+
+/* ── Hamburger (mobile) ── */
+.rio .hamburger {
+  display: none; flex-direction: column;
+  justify-content: center; align-items: center; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px;
+}
+.rio .hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--ink); border-radius: 2px;
+}
+
+/* ── Buttons ── */
+.rio .btn {
+  position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 22px; border-radius: 999px;
+  font-weight: 700; font-size: 14px; font-family: inherit;
+  cursor: pointer; border: 1.6px solid transparent;
+  transition: transform .16s, background .2s;
+}
+.rio .btn::after {
+  content: ""; position: absolute; inset: -2px;
+  background: linear-gradient(110deg, transparent 0 35%, rgba(255,255,255,.42) 50%, transparent 65% 100%);
+  transform: translateX(-130%);
+  transition: transform 560ms cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+.rio .btn:hover { transform: translateY(-2px); }
+.rio .btn:hover::after { transform: translateX(130%); }
+.rio .btn-sm { padding: 10px 18px; font-size: 13.5px; }
+
+.rio .btn-cta {
+  background: var(--brown); color: #fff;
+  box-shadow: 0 14px 30px -12px rgba(189,132,76,.5);
+}
+.rio .btn-cta:hover { background: var(--brown-deep); }
+
+.rio .btn-pink, .rio .btn-coral {
+  background: var(--pink); color: #fff;
+  box-shadow: 0 14px 30px -12px rgba(232,78,134,.5);
+}
+.rio .btn-pink:hover, .rio .btn-coral:hover { background: var(--pink-deep); }
+
+.rio .btn-green {
+  background: var(--green); color: #fff;
+  box-shadow: 0 14px 30px -12px rgba(123,169,58,.45);
+}
+.rio .btn-green:hover { background: var(--green-deep); }
+
+.rio .btn-line {
+  background: transparent; color: var(--blue);
+  border-color: var(--blue);
+}
+.rio .btn-line:hover { background: var(--blue-soft); }
+
+/* ── Mobile sticky bottom bar ── */
+.rio .mbar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+  background: #fff; border-top: 1px solid var(--line);
+  padding: 12px 20px; gap: 10px; justify-content: center;
+}
+.rio .mbar .btn { flex: 1; justify-content: center; padding: 12px; }
+
+/* ── Footer ── */
+.rio .footer {
+  background: var(--blue-deep); color: #EAEAF4;
+  padding: 52px 28px 36px; text-align: center;
+}
+.rio .footer a { color: #FFC4DA; }
+.rio .footer .footer-logo-img {
+  height: 62px; width: auto; object-fit: contain;
+  margin: 0 auto 20px; display: block;
+}
+.rio .footer-tagline { font-size: 14px; color: #9fa3c8; margin-bottom: 22px; }
+.rio .footer-links {
+  display: flex; flex-wrap: wrap; gap: 12px 22px;
+  justify-content: center;
+  font-size: 13.5px; font-weight: 600; margin-bottom: 28px;
+}
+.rio .footer-copy { font-size: 12.5px; color: #6e739a; }
+
+/* ── Mobile nav drawer overlay ── */
+.rio .mobile-nav-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(35,39,90,.72); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity .28s;
+}
+.rio .mobile-nav-overlay.open { opacity: 1; pointer-events: auto; }
+.rio .mobile-nav-drawer {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: min(340px, 88vw);
+  background: #fff; overflow-y: auto; padding: 24px 22px 40px;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.rio .mobile-nav-overlay.open .mobile-nav-drawer { transform: none; }
+.rio .mobile-nav-close {
+  display: flex; justify-content: flex-end; margin-bottom: 18px;
+}
+.rio .mobile-nav-close button {
+  background: none; border: none; font-size: 26px;
+  cursor: pointer; color: var(--ink); padding: 4px;
+}
+.rio .mobile-nav-links { display: flex; flex-direction: column; gap: 2px; }
+.rio .mobile-nav-links a {
+  display: block; padding: 12px 8px;
+  font-size: 15.5px; font-weight: 600; color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.rio .mobile-nav-links a:last-child { border-bottom: none; }
+.rio .mobile-nav-links a:hover { color: var(--blue); }
+.rio .mobile-nav-cta { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.rio .mobile-nav-cta .btn { justify-content: center; }
+
+/* ── Keyframe animations ── */
+@keyframes rio-dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: .6; }
+}
+@keyframes rio-hero-drift {
+  from { transform: scale(1.06) translate(0, 0); }
+  to   { transform: scale(1.06) translate(-12px, -8px); }
+}
+@keyframes rio-soft-lift {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 900px) {
+  .rio .nav { display: none; }
+  .rio .hamburger { display: none; }
+  .rio .nav-cta .btn-line { display: none; }
+  .rio .mbar { display: flex; bottom: 54px; z-index: 99; }
+  .rio .footer { margin-bottom: 110px; }
+}
+
+/* ── Bottom Dock Mobile / Floating Desktop Bar (Quick Actions) ── */
+.qa {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line, #e2e8f0);
+  box-shadow: 0 -8px 24px rgba(23, 30, 82, 0.08);
+}
+.qa-btn {
+  --qa-color: var(--blue, #303573);
+  --qa-chip-bg: var(--blue-soft, #EDEFF8);
+  --qa-hover-bg: var(--blue-soft, #EDEFF8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 10px;
+  text-decoration: none;
+  color: var(--qa-color);
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+.qa-btn:visited {
+  color: var(--qa-color);
+}
+.qa-btn:hover {
+  background-color: var(--qa-hover-bg);
+}
+.qa-ic {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: var(--qa-chip-bg);
+}
+.qa-ic svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.qa-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--qa-color);
+}
+.qa-call {
+  --qa-color: var(--pink-deep, #E84E86);
+  --qa-chip-bg: var(--pink-soft, #FFEAF2);
+  --qa-hover-bg: #fff5f9;
+}
+.qa-maps {
+  --qa-color: var(--blue, #303573);
+  --qa-chip-bg: var(--blue-soft, #EDEFF8);
+  --qa-hover-bg: #f7f8ff;
+}
+.qa-book {
+  --qa-color: var(--green-deep, #5E7F2C);
+  --qa-chip-bg: var(--green-soft, #EFF5E3);
+  --qa-hover-bg: #f7fbef;
+}
+.qa-ig {
+  --qa-color: var(--pink-deep, #E84E86);
+  --qa-chip-bg: var(--pink-soft, #FFEAF2);
+  --qa-hover-bg: #fff5f9;
+}
+.qa-yt {
+  --qa-color: #D93030;
+  --qa-chip-bg: #FFE8E8;
+  --qa-hover-bg: #FFF4F4;
+}
+
+@media (min-width: 880px) {
+  .qa {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: 24px;
+    transform: translateY(-50%);
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    width: auto;
+  }
+  .qa-btn {
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--qa-chip-bg);
+    box-shadow: 0 12px 26px rgba(23, 30, 82, 0.16);
+    border: 1px solid color-mix(in srgb, var(--qa-color) 20%, #ffffff);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+  }
+  .qa-btn:hover {
+    transform: scale(1.08);
+    background-color: var(--qa-color);
+    color: #ffffff;
+    box-shadow: 0 14px 28px rgba(23, 30, 82, 0.18);
+  }
+  .qa-ic {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+    background: transparent;
+  }
+  .qa-ic svg {
+    width: 23px;
+    height: 23px;
+  }
+  .qa-label {
+    display: none;
+  }
+}
+/* ── Footer Social Icons ── */
+.rio .footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.rio .footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.2s ease;
+}
+.rio .footer-socials a:hover {
+  background: var(--pink, #FD70A1);
+  transform: translateY(-2px);
+  color: #fff;
+}
+.rio .footer-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ── Header Action Dropdown Menu & Typography ── */
+.rio .header-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 275px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 48px -10px rgba(35, 39, 90, 0.22);
+  border: 1px solid var(--line, #e2e8f0);
+  padding: 8px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: rio-soft-lift 0.22s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.rio .header-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.rio .header-dropdown-item:hover {
+  background-color: var(--blue-soft, #f4f6fa);
+  transform: translateX(2px);
+}
+
+.rio .header-dropdown-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rio .header-dropdown-item-title {
+  font-family: 'Proxima Nova', 'Mulish', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--ink, #23275a);
+  line-height: 1.25;
+}
+
+.rio .header-dropdown-item-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  color: var(--muted, #64748b);
+  margin-top: 2px;
+}
+
+
+

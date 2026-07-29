@@ -1,0 +1,490 @@
+/* ═══════════════════════════════════════════════════════════
+   RIO HUMAN MILK BANK — Dedicated Ads Thank You Page CSS
+   ═══════════════════════════════════════════════════════════ */
+
+.pageWrapper {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Navigation Bar ── */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.headerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brandTitle {
+  font-family: 'Proxima Nova', 'Mulish', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #303573;
+}
+
+.brandSub {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  display: block;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.helplineBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9;
+  color: #303573;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.helplineBtn:hover {
+  background: #303573;
+  color: #ffffff;
+  border-color: #303573;
+}
+
+.homeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #303573;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.homeBtn:hover {
+  background: #232757;
+  transform: translateY(-1px);
+}
+
+/* ── Main Container ── */
+.mainContent {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* ── Hero Card ── */
+.heroCard {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px -10px rgba(48, 53, 115, 0.08);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.heroBanner {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  overflow: hidden;
+  background: #303573;
+}
+
+.heroBannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(48, 53, 115, 0.3) 0%, rgba(48, 53, 115, 0.9) 100%);
+}
+
+.verifiedBadge {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #7BA93A;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(123, 169, 58, 0.4);
+}
+
+.heroBody {
+  padding: 32px 36px 36px;
+}
+
+.successCheckIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.thankTitle {
+  font-family: 'Proxima Nova', 'Mulish', sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.thankSubtitle {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 680px;
+}
+
+.refBar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+  padding: 20px 24px;
+}
+
+.refItem {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.refTag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.refVal {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #303573;
+}
+
+/* ── Submitted Details Summary Card ── */
+.sectionTitle {
+  font-family: 'Proxima Nova', 'Mulish', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detailsCard {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px 24px;
+}
+
+.detailField {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.detailValue {
+  font-size: 14.5px;
+  color: #1e293b;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* ── Next Steps Workflow ── */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stepCard {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.stepBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #eeef99;
+  color: #303573;
+  background: #e0e7ff;
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px;
+}
+
+.stepDesc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Trust & Quality Features ── */
+.trustBanner {
+  background: linear-gradient(135deg, #303573 0%, #1e224e 100%);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 32px 36px;
+  margin-bottom: 32px;
+  box-shadow: 0 14px 40px -10px rgba(48, 53, 115, 0.3);
+}
+
+.trustTitle {
+  font-family: 'Proxima Nova', 'Mulish', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.trustIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.trustText {
+  display: flex;
+  flex-direction: column;
+}
+
+.trustItemTitle {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.trustItemDesc {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* ── CTA Action Section ── */
+.ctaBox {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  padding: 32px 36px;
+  text-align: center;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.03);
+}
+
+.ctaTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 8px;
+}
+
+.ctaDesc {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+.ctaButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btnWa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btnWa:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+}
+
+.btnCall {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #303573;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(48, 53, 115, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btnCall:hover {
+  background: #232757;
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .headerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .heroBody {
+    padding: 24px 20px;
+  }
+  .heroBanner {
+    height: 150px;
+  }
+  .detailsCard {
+    padding: 20px;
+  }
+  .trustBanner {
+    padding: 24px 20px;
+  }
+  .ctaBox {
+    padding: 24px 20px;
+  }
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btnWa, .btnCall {
+    width: 100%;
+    justify-content: center;
+  }
+}
