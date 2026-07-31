@@ -35,8 +35,8 @@ export const metadata = {
     images: [
       {
         url: "/assets/human-milk-bank/og-banner.jpg",
-        width: 1200,
-        height: 630,
+        width: 1536,
+        height: 1024,
         type: "image/jpeg",
         alt: "Rio Children's Hospital Human Milk Bank Banner",
       },
