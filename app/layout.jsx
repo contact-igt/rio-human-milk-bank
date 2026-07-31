@@ -40,13 +40,13 @@ export const metadata = {
         type: "image/jpeg",
         alt: "Rio Children's Hospital Human Milk Bank Banner",
       },
-      {
-        url: "/assets/human-milk-bank/human-milk-bank.png",
-        width: 1200,
-        height: 630,
-        type: "image/png",
-        alt: "Rio Children's Hospital Human Milk Bank",
-      },
+      // {
+      //   url: "/assets/human-milk-bank/human-milk-bank.png",
+      //   width: 1200,
+      //   height: 630,
+      //   type: "image/png",
+      //   alt: "Rio Children's Hospital Human Milk Bank",
+      // },
     ],
   },
   twitter: {
