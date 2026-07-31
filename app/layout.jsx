@@ -2,6 +2,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://riochildrenshospital.com"),
   title: "Human Milk Bank — Screened Donor Milk for Newborns | Rio Children's Hospital",
   description:
     "Rio's Human Milk Bank provides safe, screened and pasteurised donor breast milk for premature and critically ill newborns in Tamil Nadu — operating 365 days a year.",
@@ -13,11 +14,53 @@ export const metadata = {
     "Rio Children's Hospital",
     "Tamil Nadu",
   ],
+  authors: [{ name: "Rio Children's Hospital" }],
+  creator: "Rio Children's Hospital",
+  publisher: "Rio Children's Hospital",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/assets/shared/riologov2.png",
+  },
   openGraph: {
-    title: "Human Milk Bank | Rio Children's Hospital",
+    title: "Human Milk Bank — Screened Donor Milk for Newborns | Rio Children's Hospital",
+    description:
+      "Rio's Human Milk Bank provides safe, screened and pasteurised donor breast milk for premature and critically ill newborns in Tamil Nadu — operating 365 days a year.",
+    url: "https://riochildrenshospital.com",
+    siteName: "Rio Children's Hospital",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/assets/human-milk-bank/banner_bg.webp",
+        width: 1200,
+        height: 630,
+        alt: "Rio Children's Hospital Human Milk Bank Banner",
+      },
+      {
+        url: "/assets/human-milk-bank/Pasteurisation_unit.webp",
+        width: 1200,
+        height: 630,
+        alt: "Rio Human Milk Bank Pasteurisation Unit",
+      },
+      {
+        url: "/assets/human-milk-bank/human-milk-bank.png",
+        width: 1200,
+        height: 630,
+        alt: "Rio Children's Hospital Human Milk Bank",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Human Milk Bank — Screened Donor Milk | Rio Children's Hospital",
     description:
       "Safe, screened and pasteurised donor milk for premature and critically ill newborns. Operational 365 days a year.",
-    type: "website",
+    images: [
+      "/assets/human-milk-bank/banner_bg.webp",
+      "/assets/human-milk-bank/Pasteurisation_unit.webp",
+      "/assets/human-milk-bank/human-milk-bank.png",
+    ],
   },
 };
 
