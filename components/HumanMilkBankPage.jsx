@@ -100,6 +100,9 @@ export default function HumanMilkBankPage() {
         />
       </main>
 
+      {/* ── Footer ── */}
+      <SiteFooter />
+
       {/* ── Quick Actions (Floating Desktop / Sticky Mobile Dock) ── */}
       <QuickActions
         setDonorOpen={setDonorOpen}
