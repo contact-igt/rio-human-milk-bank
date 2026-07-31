@@ -1,8 +1,10 @@
 import Script from "next/script";
 import "./globals.css";
 
+const SITE_URL = "https://milkbank.riochildrenshospital.com";
+
 export const metadata = {
-  metadataBase: new URL("https://riochildrenshospital.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Human Milk Bank — Screened Donor Milk for Newborns | Rio Children's Hospital",
   description:
     "Rio's Human Milk Bank provides safe, screened and pasteurised donor breast milk for premature and critically ill newborns in Tamil Nadu — operating 365 days a year.",
@@ -26,28 +28,24 @@ export const metadata = {
     title: "Human Milk Bank — Screened Donor Milk for Newborns | Rio Children's Hospital",
     description:
       "Rio's Human Milk Bank provides safe, screened and pasteurised donor breast milk for premature and critically ill newborns in Tamil Nadu — operating 365 days a year.",
-    url: "https://riochildrenshospital.com",
+    url: SITE_URL,
     siteName: "Rio Children's Hospital",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/assets/human-milk-bank/banner_bg.webp",
-        width: 1200,
-        height: 630,
-        alt: "Rio Children's Hospital Human Milk Bank Banner",
-      },
-      {
-        url: "/assets/human-milk-bank/Pasteurisation_unit.webp",
-        width: 1200,
-        height: 630,
-        alt: "Rio Human Milk Bank Pasteurisation Unit",
-      },
-      {
         url: "/assets/human-milk-bank/human-milk-bank.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Rio Children's Hospital Human Milk Bank",
+      },
+      {
+        url: "/assets/shared/site-hero.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Rio Children's Hospital Human Milk Bank Banner",
       },
     ],
   },
@@ -57,9 +55,8 @@ export const metadata = {
     description:
       "Safe, screened and pasteurised donor milk for premature and critically ill newborns. Operational 365 days a year.",
     images: [
-      "/assets/human-milk-bank/banner_bg.webp",
-      "/assets/human-milk-bank/Pasteurisation_unit.webp",
       "/assets/human-milk-bank/human-milk-bank.png",
+      "/assets/shared/site-hero.png",
     ],
   },
 };
