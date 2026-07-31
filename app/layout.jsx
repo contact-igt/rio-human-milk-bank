@@ -41,7 +41,7 @@ export const metadata = {
         alt: "Rio Children's Hospital Human Milk Bank",
       },
       {
-        url: "/assets/shared/feeding_support.png",
+        url: "/assets/human-milk-bank/feeding_support.png",
         width: 1200,
         height: 630,
         type: "image/png",
@@ -56,7 +56,7 @@ export const metadata = {
       "Safe, screened and pasteurised donor milk for premature and critically ill newborns. Operational 365 days a year.",
     images: [
       "/assets/human-milk-bank/banner_bg.png",
-      "/assets/shared/feeding_support.png",
+      "/assets/human-milk-bank/feeding_support.png",
     ],
   },
 };
