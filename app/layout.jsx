@@ -34,18 +34,18 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/human-milk-bank/banner_bg.png",
+        url: "/assets/human-milk-bank/og-banner.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Rio Children's Hospital Human Milk Bank Banner",
+      },
+      {
+        url: "/assets/human-milk-bank/human-milk-bank.png",
         width: 1200,
         height: 630,
         type: "image/png",
         alt: "Rio Children's Hospital Human Milk Bank",
-      },
-      {
-        url: "/assets/human-milk-bank/feeding_support.png",
-        width: 1200,
-        height: 630,
-        type: "image/png",
-        alt: "Rio Children's Hospital Human Milk Bank Banner",
       },
     ],
   },
@@ -54,10 +54,7 @@ export const metadata = {
     title: "Human Milk Bank — Screened Donor Milk | Rio Children's Hospital",
     description:
       "Safe, screened and pasteurised donor milk for premature and critically ill newborns. Operational 365 days a year.",
-    images: [
-      "/assets/human-milk-bank/banner_bg.png",
-      "/assets/human-milk-bank/feeding_support.png",
-    ],
+    images: ["/assets/human-milk-bank/og-banner.jpg"],
   },
 };
 
